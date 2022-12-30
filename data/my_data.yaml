@@ -1,0 +1,21 @@
+# PASCAL VOC dataset http://host.robots.ox.ac.uk/pascal/VOC/
+# Train command: python train.py --data voc.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /VOC
+#     /yolov5
+
+
+# download command/URL (optional)
+download: bash data/scripts/get_voc.sh
+
+
+#CCPD
+train: /data/CCPD/train.txt  # 52000images
+val: /data/CCPD/val.txt # 8000images
+
+# number of classes
+nc: 1
+
+# class names
+names: [ 'car_license']
