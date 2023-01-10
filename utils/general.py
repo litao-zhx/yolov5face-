@@ -443,8 +443,8 @@ def non_max_suppression_face(prediction, conf_thres=0.25, iou_thres=0.45, classe
         else:  # best class only
             conf, j = x[:, 13:].max(1, keepdim=True)
             #conf, j = x[:, 15:].max(1, keepdim=True)
-            # x = torch.cat((box, conf, x[:, 5:13], j.float()), 1)[conf.view(-1) > conf_thres]
-            x = torch.cat((box, conf, x[:, 5:15], j.float()), 1)[conf.view(-1) > conf_thres]
+            x = torch.cat((box, conf, x[:, 5:13], j.float()), 1)[conf.view(-1) > conf_thres]
+            #x = torch.cat((box, conf, x[:, 5:15], j.float()), 1)[conf.view(-1) > conf_thres]
 
         # Filter by class
         if classes is not None:
